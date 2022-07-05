@@ -12,34 +12,34 @@
 
 int get_pf(const char *format, va_list args, pf_fn pf_funct[])
 {
-	int count = 0, i = 0, j, k = 0, num = 0;
+	int cntr = 0, i = 0, x, n = 0, dig = 0;
 
 	for (i = 0; format && format[i] != 0; i++)
 	{
 		if (format[i] != '%')
 		{
 			_putchar(format[i]);
-			count += 1;
+			cntr += 1;
 		}
 		else
 		{
-			for (j = 0; pf_funct[j].frm; j++)
+			for (x = 0; pf_funct[x].frm; x++)
 			{
-				if (format[i + 1] == pf_funct[j].frm[k])
+				if (format[i + 1] == pf_funct[x].frm[n])
 				{
-					num = pf_funct[j].fnctn(args);
-					count += num;
+					dig = pf_funct[x].fnctn(args);
+					cntr += dig;
 					i++;
 					break;
 				}
 			}
-			if (pf_funct[j].frm == NULL && format[i + 1] != ' ')
+			if (pf_funct[x].frm == NULL && format[i + 1] != ' ')
 			{
 				if (format[i + 1] != 0)
 				{
 					_putchar(format[i]);
 					_putchar(format[i + 1]);
-					count += 2;
+					cntr += 2;
 					i++;
 				}
 				else
@@ -51,6 +51,5 @@ int get_pf(const char *format, va_list args, pf_fn pf_funct[])
 	}
 	if (format == NULL)
 		return (-1);
-	return (count);
+	return (cntr);
 }
-
