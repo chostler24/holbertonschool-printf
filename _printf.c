@@ -12,8 +12,6 @@ int _printf(const char *format, ...)
 		{"c", c_funct},
 		{"s", str_funct},
 		{"%", prcnt_funct},
-		{"d", dig_funct},
-		{"i", int_funct},
 	};
 
 	va_list args;
@@ -22,7 +20,7 @@ int _printf(const char *format, ...)
 
 	va_start(args, format);
 
-	num = get_pf(const char *format, va_list args, pf_fn pf_funct[]);
+	num = get_pf(format, args, pf_funct);
 
 	va_end(args);
 
