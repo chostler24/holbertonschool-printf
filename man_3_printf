@@ -1,16 +1,44 @@
 NAME
-    The name of the command or function, followed by a one-line description of what it does.
+
+_printf - A customized version of the standard library printf function. Designed for use at Holberton School.
+
 SYNOPSIS
-    In the case of a command, you get a formal description of how to run it and what command line options it takes.
+
+#include "main.h"
+
+int _print(const char *format, ...)
+
 DESCRIPTION
-    A textual description of the functioning of the command or function.
+
+Our function _printf() sends an an output to stdout, the standard output
+stream, depending on the format applied to the function in the function's
+arguments. The format string controls the appearance of the output depending on one
+or more directives that it includes. The function is a variadic function and as
+such accepts a variable number of arguments to be displayed as long as there are
+the equivalent amount of directives in the format string. The format string
+contains characters that are directly output to stdout unless preceded by a %.
+When a % is found in the format string the character following it specifies a
+conversion that needs to be made according to the corresponding arguments which
+follow the function's format string. The function successfully converts the
+arguments that are characters, strings and the symbol %, when given as a
+directive in the format string, a % followed by c, s, or % respectively.
+
 EXAMPLES
-    Some examples of common usage.
-SEE ALSO
-    A list of related commands or functions.
+
+_printf("this string will be printed!"\n)
+
+OPTIONS
+
+This function does not use any options.
+
 BUGS
-    List known bugs.
+
+No known bugs. We'll let you know if we find any.
+
 AUTHOR
-   Specify your contact information.
+
+Connor Hostler - 4916@holbertonschool.com
+Clayton Christian - 4149@holbertonschool.com
+
 COPYRIGHT
-    Specify your copyright information.
+    Clayton and Connor, 2022.
