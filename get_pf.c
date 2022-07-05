@@ -23,17 +23,17 @@ int get_pf(const char *format, va_list args, pf_fn pf_funct[])
 		}
 		else
 		{
-			for (j = 0; pf_funct[j].fn; j++)
+			for (j = 0; pf_funct[j].frm; j++)
 			{
-				if (format[i + 1] == pf_funct[j].fn[k])
+				if (format[i + 1] == pf_funct[j].frm[k])
 				{
-					num = pf_funct[j].func(args);
+					num = pf_funct[j].fnctn(args);
 					count += num;
 					i++;
 					break;
 				}
 			}
-			if (pf_funct[j].fn == NULL && format[i + 1] != ' ')
+			if (pf_funct[j].frm == NULL && format[i + 1] != ' ')
 			{
 				if (format[i + 1] != 0)
 				{
