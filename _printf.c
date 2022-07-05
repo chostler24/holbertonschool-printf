@@ -12,6 +12,7 @@ int _printf(const char *format, ...)
 		{"c", c_funct},
 		{"s", str_funct},
 		{"%", prcnt_funct},
+		{"i", int_funct},
 	};
 
 	va_list args;
