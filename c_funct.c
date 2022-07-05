@@ -3,7 +3,7 @@
 /**
   * c_funct - function that prints chars.
   * @args: arg list
-  * Return: 0
+  * Return: 1
   */
 
 int c_funct(va_list args)
@@ -14,5 +14,5 @@ int c_funct(va_list args)
 
 	_putchar(charvar);
 
-	return (0);
+	return (1);
 }

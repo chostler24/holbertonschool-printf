@@ -3,12 +3,12 @@
 /**
   * prcnt_funct - function that prints percent sign.
   * @args: arg list
-  * Return: 0
+  * Return: 1
   */
 
 int prcnt_funct(__attribute__((unused)) va_list args)
 {
 	_putchar('%');
 
-	return (0);
+	return (1);
 }
