@@ -14,13 +14,6 @@ int int_funct(va_list args)
 	int num = va_arg(args, int);
 	char mini[11] = {"-2147483648"};
 
-	if (num < 0)
-	{
-		_putchar('-');
-		cntr++;
-		num = num * (-1);
-	}
-
 	if (num == INT_MIN)
 	{
 		for (x = 0; x <= 10; x++)
@@ -30,6 +23,13 @@ int int_funct(va_list args)
 		}
 
 		return (cntr);
+	}
+
+	if (num < 0)
+	{
+		_putchar('-');
+		cntr++;
+		num = num * (-1);
 	}
 
 	while ((num / i) >= 10)
